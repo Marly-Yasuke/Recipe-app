@@ -9,7 +9,7 @@ function Popular() {
   const getPopular = async () => {
     // need to fix fetching error (check key)
     const api = await fetch(`
-  https://api.edamam.com/api/recipes/v2?apiKey=${process.env.REACT_APP_API_KEY}&number=10`);
+    https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=10`);
     const data = await api.json();
     console.log(data);
   };
