@@ -26,8 +26,8 @@ function Popular() {
         <Splide
           options={{
             perPage: 4,
-            arrows: false,
-            pagination: false,
+            arrow: false,
+            pagination: true,
             drag: "free",
             gap: "5rem",
           }}
@@ -44,7 +44,7 @@ function Popular() {
           })}
         </Splide>
       </Wrapper>
-      );
+      ;
     </div>
   );
 }
@@ -54,12 +54,33 @@ const Wrapper = styled.div`
 `;
 
 const Card = styled.div`
-  min-height: 25rem;
+  min-height: 10rem;
+  width: 15rem;
   border-radius: 2rem;
   overflow: hidden;
-
+  position: relative;
   img {
     border-radius: 2rem;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+  }
+  p{
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+  bottom: 0%;
+  transform: traslate(-50%, 0%);
+  color: white;
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1rem;
+  height40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   }
 `;
 
