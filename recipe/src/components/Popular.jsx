@@ -7,9 +7,8 @@ function Popular() {
   }, []);
 
   const getPopular = async () => {
-    // need to hide API key => issue when requesting to .env
     const api = await fetch(`
-    https://api.spoonacular.com/recipes/random?apiKey=ed3eda3947f446d5a0d190fba46f0475&number=10`);
+    https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=10`);
     const data = await api.json();
     console.log(data);
   };
