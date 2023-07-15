@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { styled } from "styled-components";
+import {Splide, SlideSlide} from '@splidejs/react-splide'
+import '@splidejs/react-splide/css';
 
 function Popular() {
   const [popular, setPopular] = useState([]);
@@ -45,6 +47,11 @@ const Wrapper = styled.div`
 const Card = styled.div`
   min-height: 25rem;
   border-radius: 2rem;
+  overflow: hidden;
+
+  img{
+    border-radius: 2rem;
+  }
 `;
 
 export default Popular;
