@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { styled } from "styled-components";
-import {Splide, SlideSlide} from '@splidejs/react-splide'
-import '@splidejs/react-splide/css';
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/react-splide/css";
 
 function Popular() {
   const [popular, setPopular] = useState([]);
@@ -21,21 +21,22 @@ function Popular() {
 
   return (
     <div>
-      {popular.map((recipe) => {
-        return (
-          <Wrapper key={recipe.id}>
-            <h3>Popular Picks</h3>
-            {popular.map((recipe) => {
-              return (
+      <Wrapper>
+        <h3>Popular Picks</h3>
+        <Splide>
+          {popular.map((recipe) => {
+            return (
+              <SplideSlide>
                 <Card key={recipe.id}>
                   <p>{recipe.title}</p>
                   <img src={recipe.image} alt={recipe.title} />
                 </Card>
-              );
-            })}
-          </Wrapper>
-        );
-      })}
+              </SplideSlide>
+            );
+          })}
+        </Splide>
+      </Wrapper>
+      );
     </div>
   );
 }
@@ -49,7 +50,7 @@ const Card = styled.div`
   border-radius: 2rem;
   overflow: hidden;
 
-  img{
+  img {
     border-radius: 2rem;
   }
 `;
