@@ -6,7 +6,7 @@ import { useState } from "react";
 
 function Cuisine() {
   const [cuisine, setCuisine] = useState([]);
-
+let params = useParams()
   const getCuisine = async (name) => {
     const data = await fetch( `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&cuisine=${name}&number=10`
     )
@@ -15,8 +15,9 @@ function Cuisine() {
   }
 
   useEffect(()=>{
-getCuisine('italian')
-  },[])
+getCuisine(params.type)
+console.log(params)
+},[params.type])
   return <div>Cuisine</div>;
 }
 
